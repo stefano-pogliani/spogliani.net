@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Page not found | {{ .Site.Title }}</title>
+    {{ partial "header.html" . }}
+  </head>
+
+  <body>
+    <div class="container-fluid content">
+      {{ partial "nav.html" . }}
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+          <!-- Main row -->
+          <div class="row">
+            <div class="col-xs-12">
+
+              Looks like the page you are looking for is not there.
+              Have you tried the <a href="{{ relref . "index.md" }}">Home</a>
+              page.
+
+            </div> <!-- .col-xs-12 -->
+          </div> <!-- .row -->
+
+        </div> <!-- .col-xs-12.col-sm-8.col-sm-offset-2-->
+      </div> <!-- .row -->
+    </div> <!-- .container-fluid.content -->
+  </body>
+</html>

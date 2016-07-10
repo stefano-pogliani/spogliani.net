@@ -1,0 +1,24 @@
+{
+  "name": "assets",
+  "authors": [
+    "Stefano Pogliani <stefano@spogliani.net>"
+  ],
+  "description": "Asset files for spogliani.net",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "dependencies": {
+    "bootstrap": "~3.3",
+    "fontawesome": "~4.6",
+    "jquery": "~2.2"
+  }
+}

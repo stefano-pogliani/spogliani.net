@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Site.Title }}</title>
+    {{ partial "header.html" . }}
+  </head>
+
+  <body>
+    <div class="container-fluid content">
+      {{ partial "nav.html" . }}
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+
+          <!-- Main row -->
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel panel-default">
+                <div class="panel-heading">Latest blog article</div>
+                <div class="panel-body">
+                  Latest blog article
+                </div> <!-- .panel-body -->
+              </div> <!-- .panel.panel-default -->
+            </div> <!-- .col-xs-12 -->
+          </div> <!-- .row -->
+
+
+          <!-- Bottom row -->
+          <div class="row">
+
+            <!-- Left side -->
+            <div class="col-xs-12 col-sm-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  Next up in the blog: {{ .Site.Data.next.title }}
+                </div>
+                <div class="panel-body">
+                  {{ .Site.Data.next.content | markdownify }}
+                </div> <!-- .panel-body -->
+              </div> <!-- .panel.panel-info -->
+            </div> <!-- .col-xs-12.col-sm-6 -->
+
+            <!-- Right side -->
+            <div class="col-xs-12 col-sm-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">Content license</div>
+                <div class="panel-body">
+                  <p>
+                    Except where otherwise noted, this web site is licensed under
+                    <a rel="license" target="_blank"
+                       href="http://creativecommons.org/licenses/by/4.0/">
+                      Creative Commons BY 4.0
+                    </a>.
+                  </p>
+                  <p>
+                    I chose a license that allows commercial use and does not
+                    enforce share alike because I believe that a big part of
+                    openly share ideas is not limiting other people.
+                  </p>
+                  <p>
+                    This means that if you reuse my content you are under no
+                    obligation to redistribute it for free or as open content
+                    but please <strong>consider an open license</strong>
+                    for your works.
+                  </p>
+                </div> <!-- .panel-body -->
+              </div> <!-- .panel.panel-info -->
+            </div> <!-- .col-xs-12.col-sm-6 -->
+
+          </div> <!-- .row -->
+
+        </div> <!-- .col-xs-12.col-sm-8.col-sm-offset-2-->
+      </div> <!-- .row -->
+    </div> <!-- .container-fluid.content -->
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<div class="row nav">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <nav>
+      <span class="ref-wings-horizontal"></span>
+      <span class="ref-wings-vertical"></span>
+
+      <!-- Home button -->
+      <a href="{{ relref . "index.md" }}" class="home">
+        <span class="fa fa-home"></span>
+      </a>
+
+      <!-- Content -->
+      <div class="btn-group content">
+        <button type="button"
+                class="btn btn-warning link {{if (eq .Params.active_menu "content")}}active{{end}}">
+          <a href="{{ relref . "content.md" }}">Blog &amp; Content</a>
+        </button>
+        <button type="button"
+                class="btn btn-warning dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        
+        <ul class="dropdown-menu">
+          <li class="{{if (eq .Params.active_menu "content.blog")}}active{{end}}">
+            <a href="{{ relref . "content/blog.md" }}">Blog</a>
+          </li>
+          <li role="separator" class="divider"></li>
+          <li class="{{if (eq .Params.active_menu "content.projects")}}active{{end}}">
+            <a href="{{ relref . "content/projects.md" }}">Projects</a>
+          </li>
+          <li class="{{if (eq .Params.active_menu "content.graveyard")}}active{{end}}">
+            <a href="{{ relref . "content/graveyard.md" }}">Graveyard</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Meta -->
+      <div class="btn-group meta">
+        <button type="button"
+                class="btn btn-warning link {{if (eq .Params.active_menu "meta")}}active{{end}}">
+          <a href="{{ relref . "meta.md" }}">The Site &amp; me</a>
+        </button>
+        <button type="button"
+                class="btn btn-warning dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        
+        <ul class="dropdown-menu">
+          <li class="{{if (eq .Params.active_menu "meta.privacy")}}active{{end}}">
+            <a href="{{ relref . "meta/privacy.md" }}">Privacy Policy</a>
+          </li>
+          <li role="separator" class="divider"></li>
+          <li class="{{if (eq .Params.active_menu "meta.me")}}active{{end}}">
+            <a href="{{ relref . "meta/me.md" }}">Background &amp; Contacts</a>
+          </li>
+          <li class="{{if (eq .Params.active_menu "meta.contributions")}}active{{end}}">
+            <a href="{{ relref . "meta/contributions.md" }}">Open source contributions</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+</div>

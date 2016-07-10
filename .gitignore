@@ -1,0 +1,6 @@
+assets/bower_components/
+assets/node_modules/
+out/
+site/themes/spogliani/static/
+
+*.swp

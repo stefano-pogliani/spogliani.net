@@ -1,0 +1,15 @@
+{
+  "name": "spogliani",
+  "license": "MIT",
+  "min_version": "0.15",
+
+  "homepage": "",
+  "description": "",
+
+  "features": [],
+  "tags": [],
+
+  "author": {
+    "name": "Stefano Pogliani"
+  }
+}

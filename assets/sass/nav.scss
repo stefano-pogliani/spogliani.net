@@ -1,0 +1,84 @@
+// Variables.
+$SHOW_REFERENCE_LINES: false;
+$button_color: rgb(240, 173, 78);
+
+// Force scrollbar in all pages to solve the resize issue during navigation.
+html {
+  overflow-y: scroll; 
+}
+
+
+// Style top navigation bar.
+div.row.nav {
+  margin-bottom: 2em;
+
+  nav {
+    background:          none;
+    background-image:    url("wings.svg");
+    background-repeat:   no-repeat;
+    background-size:     contain;
+    background-position: center;
+
+    height:   8em;
+    position: relative;
+
+    .home {
+      color: $button_color;
+      font-size: 3em;
+
+      position: absolute;
+      top: 0.2em;
+      left: calc(50% - 0.5em);
+    }
+
+    button a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    div.btn-group.content {
+      position: absolute;
+      top: 6em;
+      left: calc(50% - 16em);
+    }
+
+    div.btn-group.meta {
+      position: absolute;
+      top: 6em;
+      right: calc(50% - 16em);
+    }
+
+    @media (max-width: 768px) {
+      div.btn-group.content {
+        left: 0em;
+      }
+      div.btn-group.meta {
+        right: 0em;
+      }
+    }
+  }
+}
+
+
+// Style wings reference lines.
+div.row.nav {
+  span.ref-wings-horizontal {
+    border:  1px dotted rgb(255, 0, 255);
+    display: if($SHOW_REFERENCE_LINES, block, none);
+    height:  100%;
+    width:   0px;
+
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  span.ref-wings-vertical {
+    border:  1px dotted rgb(0, 255, 0);
+    display: if($SHOW_REFERENCE_LINES, block, none);
+    height:  0px;
+    width:   100%;
+
+    position: absolute;
+    top: 50%;
+  }
+}

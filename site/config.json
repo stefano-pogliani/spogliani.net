@@ -1,0 +1,15 @@
+{
+   "baseurl": "http://spogliani.net",
+   "languageCode": "en-gb",
+   "publishdir": "../out",
+
+   "canonifyurls": false,
+   "relativeURLs": true,
+
+   "contentdir": "content",
+   "theme": "spogliani",
+   "pygmentsuseclasses": true,
+
+   "title": "Stefano's cluster",
+   "copyright": "Copyright (c) 2016, Stefano Pogliani"
+}

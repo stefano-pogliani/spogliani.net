@@ -1,0 +1,12 @@
+.table-no-row-lines {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-top: none;
+      }
+    }
+  }
+}
