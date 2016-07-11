@@ -11,7 +11,8 @@ module.exports = {
   resolve: {
     alias: {
       "bootstrap": bower_dir + "/bootstrap/dist/js/bootstrap.js",
-      "jquery": bower_dir + "/jquery/src/jquery.js"
+      "jquery": bower_dir + "/jquery/src/jquery.js",
+      "moment": bower_dir + "/moment/moment.js"
     }
   },
 

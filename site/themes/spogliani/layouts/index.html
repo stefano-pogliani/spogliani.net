@@ -14,12 +14,21 @@
 
 
           <!-- Main row -->
-          <div class="row">
+          {{ $posts := where .Site.Pages "Section" "blog" }}
+          {{ $posts := where $posts "Layout" "" }}
+          {{ $latest_post := index $posts 0 }}
+          <div id="home-blog" class="row">
             <div class="col-xs-12">
               <div class="panel panel-default">
-                <div class="panel-heading">Latest blog article</div>
+                <div class="panel-heading blog-post-title">
+                  <h1>
+                    <a href="{{ $latest_post.RelPermalink }}">
+                      {{ $latest_post.Title }}
+                    </a>
+                  </h1>
+                </div>
                 <div class="panel-body">
-                  Latest blog article
+                  {{ $latest_post.Content }}
                 </div> <!-- .panel-body -->
               </div> <!-- .panel.panel-default -->
             </div> <!-- .col-xs-12 -->
@@ -33,7 +42,7 @@
             <div class="col-xs-12 col-sm-6">
               <div class="panel panel-info">
                 <div class="panel-heading">
-                  Next up in the blog: {{ .Site.Data.next.title }}
+                  Next up: {{ .Site.Data.next.title }}
                 </div>
                 <div class="panel-body">
                   {{ .Site.Data.next.content | markdownify }}

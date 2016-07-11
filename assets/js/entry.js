@@ -9,3 +9,4 @@ require("../sass/entry.scss");
 
 // Website's code.
 require("./nav");
+require("./blog");

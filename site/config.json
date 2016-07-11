@@ -11,5 +11,9 @@
    "pygmentsuseclasses": true,
 
    "title": "Stefano's cluster",
-   "copyright": "Copyright (c) 2016, Stefano Pogliani"
+   "copyright": "Copyright (c) 2016, Stefano Pogliani",
+
+   "taxonomies": {
+     "tag": "tags"
+   }
 }

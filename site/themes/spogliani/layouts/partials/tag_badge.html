@@ -1,0 +1,9 @@
+{{ $tag_uri := printf "tags/%s" (urlize .Tag) }}
+<a href="{{ relURL $tag_uri }}"
+   class="btn btn-primary btn-xs">
+  {{ $count := 0 -}}
+  {{ $taxonomy := .Site.Taxonomies.tags -}}
+  {{ $term := $taxonomy.Get .Tag -}}
+  {{ .Tag | humanize }}
+  <span class="badge">{{ $term.Count }}</span>
+</a>

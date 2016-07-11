@@ -22,9 +22,12 @@
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
-        
+
         <ul class="dropdown-menu">
-          <li class="{{if (eq .Params.active_menu "content.blog")}}active{{end}}">
+          {{ $active_parma := eq .Params.active_menu "content.blog" }}
+          {{ $active_scratch := eq ($.Scratch.Get "active_menu") "blog" }}
+          {{ $active_blog := or $active_parma $active_scratch }}
+          <li class="{{if $active_blog}}active{{end}}">
             <a href="{{ relref . "content/blog.md" }}">Blog</a>
           </li>
           <li role="separator" class="divider"></li>

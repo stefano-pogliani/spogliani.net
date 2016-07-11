@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ partial "header.html" . }}
+  </head>
+
+  <body>
+    <div class="container-fluid content">
+      {{ partial "nav.html" . }}
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+          <span id="blog-side-expand"
+                class="visible-xs-inline-block fa fa-bars"
+                title="Show blog navigation"></span>
+
+          <div class="row">
+        
+            <!-- Side bar to navigate across the blog. -->
+            <div id="blog-side-nav"
+                 class="hidden-xs col-xs-12 col-sm-4 col-md-3">
+              {{ partial "blog_nav.html" . }}
+            </div> <!-- #blog-side-nav -->
+
+            <!-- Blog content -->
+            <div id="blog-body" class="col-xs-12 col-sm-8 col-md-9">
+              <div>
+                <div class="blog-post panel panel-default">
+                  <div class="panel-heading blog-post-title">
+                    <h1>{{ .Title }}</h1>
+                  </div> <!-- .panel-heading.blog-post-title -->
+                  <div class="panel-body">
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                        {{ .Content }}
+                      </div> <!-- .col-sx-12 -->
+                    </div> <!-- .row -->
+
+                    {{ if .Params.tags }}
+                    <div class="row gap before">
+                      <div class="col-xs-12">
+                        {{ range .Params.tags }}
+                        {{ partial "tag_badge" (dict "Tag" . "Site" $.Site) }}
+                        {{ end }}
+                      </div> <!-- .col-sx-12 -->
+                    </div> <!-- .row.gap.before -->
+                    {{ end }}
+
+                    <div class="row gap before">
+                      <div class="col-xs-12 text-right blog post-date">
+                        Last change:
+                        <span class="moment date-ago" data-date="{{ .Date }}"
+                              title="{{ .Date }}">
+                          {{ .Date }}
+                        </span>
+                      </div> <!-- .col-xs-6 -->
+                    </div> <!-- .row.gap.before -->
+
+                  </div> <!-- .panel-body -->
+                </div> <!-- .blog-post.panel.panel-default -->
+              </div>
+            </div> <!-- #blog-body -->
+
+          </div> <!-- .row -->
+
+        </div> <!-- .col-xs-12.col-sm-8.col-sm-offset-2-->
+      </div> <!-- .row -->
+    </div> <!-- .container-fluid.content -->
+  </body>
+</html>

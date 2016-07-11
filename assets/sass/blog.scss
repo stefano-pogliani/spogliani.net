@@ -1,0 +1,153 @@
+// Variables
+$btn-default-border: rgb(238, 238, 238);
+$btn-default-color: rgb(51, 51, 51);
+$brand-success: rgb(92, 184, 92);
+$gray-lighter: rgb(238, 238, 238);
+$gray-light: rgb(119, 119, 119);
+$link-color: rgb(51,122,183);
+$link-hover-color: rgb(35,82,124);
+
+
+// Mixins
+@mixin radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin bold-border($side: "left", $colour: $brand-success) {
+  border:  1px solid $gray-lighter;
+  padding: 1em;
+  @include radius(5px);
+
+  @if $side == "bottom" {
+    border-bottom-width: 5px;
+    border-bottom-color: $colour;
+  }
+  @if $side == "left" {
+    border-left-width: 5px;
+    border-left-color: $colour;
+  }
+  @if $side == "right" {
+    border-right-width: 5px;
+    border-right-color: $colour;
+  }
+  @if $side == "top" {
+    border-top-width: 5px;
+    border-top-color: $colour;
+  }
+}
+
+
+// Styles
+div.blog.post-date {
+  color: $gray-light;
+  margin-bottom: 0;
+}
+
+#blog-side-expand {
+  border:    1px solid $btn-default-border;
+  cursor:    pointer;
+  font-size: 1.6em;
+  left:      calc(100% - 1.2em);
+  position:  relative;
+
+  margin-bottom:  .2em;
+  padding:        2px;
+  padding-bottom: 0px;
+  padding-left:   4px;
+  padding-right:  4px;
+
+  color: $btn-default-border;
+  @include radius(5px);
+
+  &:hover {
+    background: $btn-default-border;
+    color:      $btn-default-color;
+  }
+}
+
+
+#blog-side-nav {
+  > nav {
+    margin-bottom: 0.5em;
+    @include bold-border(right, $brand-success);
+
+    ul {
+      list-style:   none;
+      padding-left: 0.5em;
+
+      span.blog-title-nav {
+        color:           $link-color;
+        cursor:          pointer;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color:           $link-hover-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  span.back-to-top {
+    color:  $link-color;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $link-hover-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+#blog-body {
+  > div {
+    @include bold-border(left, $brand-success);
+  }
+}
+
+#blog-body,
+#home-blog {
+  div.gap.before {
+    margin-top: 0.5em;
+  }
+
+  div.page-header {
+    margin-top: 0;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+  }
+
+  div.blog-post-title {
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  div.pagination-div > ul {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    color: $gray-light;
+    text-align: center;
+  }
+
+  h1 { font-size: 30px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 14px; }
+  h5 { font-size: 12px; }
+  h6 { font-size: 10px; }
+}

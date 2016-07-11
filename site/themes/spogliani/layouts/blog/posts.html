@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ partial "header.html" . }}
+  </head>
+
+  <body>
+    <div class="container-fluid content">
+      {{ partial "nav.html" . }}
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+          <span id="blog-side-expand"
+                class="visible-xs-inline-block fa fa-bars"
+                title="Show blog navigation"></span>
+
+          <div class="row">
+        
+            <!-- Side bar to navigate across the blog. -->
+            <div id="blog-side-nav"
+                 class="hidden-xs col-xs-12 col-sm-4 col-md-3">
+              {{ partial "blog_nav.html" . }}
+            </div> <!-- #blog-side-nav -->
+
+            <!-- Blog content -->
+            <div id="blog-body" class="col-xs-12 col-sm-8 col-md-9">
+              <div>
+
+                <div class="page-header">
+                  <h1>Recent posts</h1>
+                </div> <!-- .page-header -->
+
+                <div class="row">
+                  {{ $pages := where .Site.Pages "Section" "blog" }}
+                  {{ $pages := where $pages "Layout" "" }}
+                  {{ range first 10 $pages }}
+                  <div class="col-xs-12">
+                    {{ .Render "summary" }}
+                  </div> <!-- .col-xs-12 -->
+                  {{ end }}
+                </div> <!-- .row -->
+
+              </div>
+            </div> <!-- #blog-body -->
+
+          </div> <!-- .row -->
+
+        </div> <!-- .col-xs-12.col-sm-8.col-sm-offset-2-->
+      </div> <!-- .row -->
+    </div> <!-- .container-fluid.content -->
+  </body>
+</html>

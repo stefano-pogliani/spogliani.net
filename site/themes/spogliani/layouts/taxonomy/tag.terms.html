@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ partial "header.html" . }}
+  </head>
+
+  <body>
+    <div class="container-fluid content">
+      {{ partial "nav.html" . }}
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+          <span id="blog-side-expand"
+                class="visible-xs-inline-block fa fa-bars"
+                title="Show blog navigation"></span>
+
+          <div class="row">
+        
+            <!-- Side bar to navigate across the blog. -->
+            <div id="blog-side-nav"
+                 class="hidden-xs col-xs-12 col-sm-4 col-md-3">
+              {{ partial "blog_nav.html" . }}
+            </div> <!-- #blog-side-nav -->
+
+            <!-- Blog content -->
+            <div id="blog-body" class="col-xs-12 col-sm-8 col-md-9">
+              <div>
+
+                <div class="page-header">
+                  <h1>List of all tags</h1>
+                </div> <!-- .page-header -->
+
+                <div class="row">
+                  <div class="col-xs-12">
+                    {{ range $tag, $term := .Data.Terms.Alphabetical }}
+                    {{ partial "tag_badge" (dict "Tag" $term.Name "Site" $.Site) }}
+                    {{ end }}
+                  </div> <!-- .col-xs-12 -->
+                </div> <!-- .row -->
+
+              </div>
+            </div> <!-- #blog-body -->
+
+          </div> <!-- .row -->
+
+        </div> <!-- .col-xs-12.col-sm-8.col-sm-offset-2-->
+      </div> <!-- .row -->
+    </div> <!-- .container-fluid.content -->
+  </body>
+</html>
