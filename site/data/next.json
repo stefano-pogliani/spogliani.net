@@ -1,4 +1,9 @@
 {
-  "title": "to be determined",
-  "content": "To be determined"
+  "title": "a new SaltStack repo",
+  "content": [
+    "With the evolution of SaltStack and, mostly, my experience ",
+    "in it I realised several limitiations of my states organization.",
+    "",
+    "It is now time to re-think it and design a new structure."
+  ]
 }

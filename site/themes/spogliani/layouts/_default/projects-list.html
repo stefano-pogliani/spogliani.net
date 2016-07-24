@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ partial "header.html" . }}
+  </head>
+
+  <body>
+    <div class="container-fluid content">
+      {{ partial "nav.html" . }}
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+          <!-- Main row -->
+          <div class="row">
+            <div class="col-xs-12">
+              {{ .Content }}
+            </div> <!-- .col-xs-12 -->
+          </div> <!-- .row -->
+
+          <!-- Table row -->
+          {{ $am := .Params.active_menu }}
+          {{ $pages := where .Site.Pages ".Params.active_menu" $am }}
+          {{ $pages := where $pages "Type" "project" }}
+          {{ $pages := sort $pages "Title" }}
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="table">
+                <thead>
+                  <tr><th colspan=2>{{ .Params.label }}</th></tr>
+                </thead>
+                <tbody>
+                  {{ range $pages }}
+                  <tr>
+                    <td>
+                      <a href="{{ .RelPermalink }}">
+                        {{ .Title }}
+                      </a>
+                    </td>
+                    <td>{{ .Params.description | default "" }}</td>
+                  </tr>
+                  {{ end }}
+                </tbody>
+              </table>
+            </div> <!-- .col-xs-12 -->
+          </div> <!-- .row -->
+
+        </div> <!-- .col-xs-12.col-sm-8.col-sm-offset-2-->
+      </div> <!-- .row -->
+    </div> <!-- .container-fluid.content -->
+  </body>
+</html>

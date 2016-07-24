@@ -1,0 +1,17 @@
+{{ $API   := "https://api.github.com/repos" -}}
+{{ $OWNER := "stefano-pogliani" -}}
+
+{{ $repo := .Get 0 -}}
+{{ $path := .Get 1 -}}
+{{ $page := getJSON $API "/" $OWNER "/" $repo "/contents/" $path -}}
+
+{{ if eq $page.encoding "base64" -}}
+{{ $content := $page.content | base64Decode }}
+{{ $content := replaceRE "^(.*?\\n=+)?" "" $content }}
+{{ $content | markdownify }}
+{{ else -}}
+<div class="alert alert-danger" role="alert">
+  <b>Unable to fetch data</b>.
+  GitHub returned a content encoded in an unsupported format.
+</div>
+{{ end -}}

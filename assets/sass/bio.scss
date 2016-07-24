@@ -1,0 +1,135 @@
+$btn-info-bg: rgb(91, 192, 222);
+$btn-primary-bg: rgb(66, 139, 202);
+$btn-primary-border: rgb(53, 126, 189);
+$btn-success-color: rgb(255, 255, 255);
+
+
+#bio-contact-list {
+  height: calc(130px);
+  margin-bottom: 1em;
+  position: relative;
+
+  a {
+    color: $btn-success-color;
+    text-decoration: none;
+    position: absolute;
+  }
+
+  a {
+    span {
+      cursor: pointer;
+      background: $btn-primary-bg;
+
+      display: block;
+      height:  50px;
+      width:   50px;
+      
+      .connect-line {
+        border:   1px solid $btn-primary-border;
+        display:  none;
+        position: absolute;
+        z-index:  -100;
+      }
+    }
+
+    &.active span, &:hover span {
+      background: $btn-info-bg;
+
+      .connect-line {
+        display: block;
+      }
+    }
+  }
+
+  a.me {
+    left: calc(50% - 25px);
+
+    span {
+      padding-top: 16px;
+    }
+  }
+
+  a.github {
+    left: calc(50% - 25px - 85px);
+    top:  40px;
+
+    span {
+      font-size: 40px;
+      padding-top: 5px;
+
+      .connect-line {
+        height: 0px;
+        width:  55px;
+
+        left: 43px;
+        top:  2px;
+
+        padding: 0px;
+        transform: rotate(-30deg);
+      }
+    }
+  }
+
+  a.email {
+    left: calc(50% - 25px - 30px);
+    top: 70px;
+
+    span {
+      font-size: 30px;
+      padding-top: 8px;
+
+      .connect-line {
+        height: 31px;
+        width:  0px;
+
+        left: 34px;
+        top:  -26px;
+
+        padding: 0px;
+        transform: rotate(25deg);
+      }
+    }
+  }
+
+  a.twitter {
+    left: calc(50% + 25px - 20px);
+    top: 70px;
+
+    span {
+      font-size: 40px;
+      padding-top: 5px;
+
+      .connect-line {
+        height: 31px;
+        width:  0px;
+
+        left: 11px;
+        top:  -29px;
+
+        padding: 0px;
+        transform: rotate(-25deg);
+      }
+    }
+  }
+
+  a.linkedin {
+    left: calc(50% + 25px + 34px);
+    top: 40px;
+
+    span {
+      font-size: 30px;
+      padding-top: 8px;
+
+      .connect-line {
+        height: 0px;
+        width:  55px;
+
+        left: -43px;
+        top:  2px;
+
+        padding: 0px;
+        transform: rotate(30deg);
+      }
+    }
+  }
+}

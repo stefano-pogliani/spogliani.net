@@ -16,7 +16,7 @@ modules defining Ember routes and views with their
 <!--more-->
 
 <div class="alert alert-warning" role="alert">
-  While the content of this post is still valid, the website has been
+  While the message of this post is still valid, the website has been
   re-implemented with as a static site.
 
   As such, most comments no longer apply to this specific site,

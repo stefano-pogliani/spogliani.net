@@ -45,7 +45,7 @@
                   Next up: {{ .Site.Data.next.title }}
                 </div>
                 <div class="panel-body">
-                  {{ .Site.Data.next.content | markdownify }}
+                  {{ delimit .Site.Data.next.content "\n" | markdownify }}
                 </div> <!-- .panel-body -->
               </div> <!-- .panel.panel-info -->
             </div> <!-- .col-xs-12.col-sm-6 -->

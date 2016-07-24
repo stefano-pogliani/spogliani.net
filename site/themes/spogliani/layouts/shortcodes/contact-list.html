@@ -1,0 +1,39 @@
+{{ $tag := .Get 0 -}}
+<div class="row">
+  <div class="col-xs-12 text-center" id="bio-contact-list">
+
+    <a href="{{ relref . "meta/me.md" }}" title="Me"
+       class="{{ if eq $tag "me"}}active{{end}} me">
+      <span class="img-circle">Me</span>
+    </a>
+
+    <a href="{{ relref . "meta/me/github.md" }}" title="GitHub"
+       class="{{ if eq $tag "github"}}active{{end}} github">
+      <span class="img-circle fa fa-github">
+        <span class="connect-line"></span>
+      </span>
+    </a>
+
+    <a href="{{ relref . "meta/me/email.md" }}" title="E-Mail"
+       class="{{ if eq $tag "email"}}active{{end}} email">
+      <span class="img-circle fa fa-envelope">
+        <span class="connect-line"></span>
+      </span>
+    </a>
+
+    <a href="{{ relref . "meta/me/twitter.md" }}" title="Teitter"
+       class="{{ if eq $tag "twitter"}}active{{end}} twitter">
+      <span class="img-circle fa fa-twitter">
+        <span class="connect-line"></span>
+      </span>
+    </a>
+
+    <a href="{{ relref . "meta/me/linkedin.md" }}" title="LinkedIn"
+       class="{{ if eq $tag "linkedin"}}active{{end}} linkedin">
+      <span class="img-circle fa fa-linkedin">
+        <span class="connect-line"></span>
+      </span>
+    </a>
+
+  </div>
+</div>

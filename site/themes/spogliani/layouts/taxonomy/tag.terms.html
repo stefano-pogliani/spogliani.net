@@ -7,6 +7,7 @@
 
   <body>
     <div class="container-fluid content">
+      {{ .Scratch.Set "active_menu" "blog" -}}
       {{ partial "nav.html" . }}
 
       <div class="row">

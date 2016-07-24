@@ -9,11 +9,12 @@ active_menu = "meta"
   <thead><tr><th colspan="2">The Site</td></tr></thead>
   <tbody>
     <tr>
-      <td><a href="{{< relref "meta/privacy.md" >}}">Privacy Policy</a></td>
-      <td>
-        This site uses Piwik to track visitors.
-        Learn more about how data is collected and why.
-      </td>
+      <td><a href="{{< relref "meta/source.md" >}}">Site's Source</a></td>
+      <td>Looking for the source files for this website?</td>
+    </tr>
+    <tr>
+      <td><a href="{{< relref "meta/privacy.md" >}}">Privacy Information</a></td>
+      <td>What is collected, why, and by whom?</td>
     </tr>
   </tbody>
 </table>

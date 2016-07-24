@@ -55,8 +55,11 @@
         </button>
         
         <ul class="dropdown-menu">
+          <li class="{{if (eq .Params.active_menu "meta.source")}}active{{end}}">
+            <a href="{{ relref . "meta/source.md" }}">Site's Source</a>
+          </li>
           <li class="{{if (eq .Params.active_menu "meta.privacy")}}active{{end}}">
-            <a href="{{ relref . "meta/privacy.md" }}">Privacy Policy</a>
+            <a href="{{ relref . "meta/privacy.md" }}">Privacy Information</a>
           </li>
           <li role="separator" class="divider"></li>
           <li class="{{if (eq .Params.active_menu "meta.me")}}active{{end}}">
