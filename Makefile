@@ -29,4 +29,4 @@ server: debug
 
 
 upload:
-	aws --profile=spogliani-net s3 sync --delete --acl public-read out/ s3://spogliani.net/
+	aws --profile=spogliani-net s3 sync --delete out/ s3://spogliani.net/
