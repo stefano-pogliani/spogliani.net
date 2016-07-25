@@ -1,4 +1,4 @@
-.PHONY: build clean debug server
+.PHONY: build clean debug publish server upload
 .DEFAULT_GOAL := build
 
 
@@ -9,17 +9,24 @@ build:
 	cd site/ && hugo
 
 
-debug:
-	cd assets/ && npm install
-	cd assets/ && bower install
-	cd assets/ && webpack
-
-
 clean:
 	rm -rf assets/bower_components/
 	rm -rf assets/node_modules/
 	rm -rf site/themes/spogliani/static/
 
 
+debug:
+	cd assets/ && npm install
+	cd assets/ && bower install
+	cd assets/ && webpack
+
+
+publish: clean build upload
+
+
 server: debug
 	cd site/ && hugo server
+
+
+upload:
+	aws --profile=spogliani-net s3 sync --delete --acl public-read out/ s3://spogliani.net/
