@@ -14,11 +14,16 @@
 
           <!-- Main row -->
           <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 center-block">
 
-              Looks like the page you are looking for is not there.
-              Have you tried the <a href="{{ relref . "index.md" }}">Home</a>
-              page.
+              <div class="alert alert-danger text-center" role="alert">
+                <p><b>Ooops!</b></p>
+                <p>
+                  Looks like the page you are looking for is not there.<br>
+                  Have you tried the
+                  <a href="{{ relref . "index.md" }}">Home</a> page?
+                </p>
+              </div>
 
             </div> <!-- .col-xs-12 -->
           </div> <!-- .row -->
