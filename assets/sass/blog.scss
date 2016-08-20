@@ -151,3 +151,12 @@ div.blog.post-date {
   h5 { font-size: 12px; }
   h6 { font-size: 10px; }
 }
+
+#blog-body,
+#home-blog {
+  figure.normal {
+    img {
+      width: auto;
+    }
+  }
+}

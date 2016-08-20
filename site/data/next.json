@@ -1,9 +1,14 @@
 {
-  "title": "a new SaltStack repo",
+  "title": "SnowFox service manager",
   "content": [
-    "With the evolution of SaltStack and, mostly, my experience ",
-    "in it I realised several limitiations of my states organization.",
+    "I have been working on [SnowFox](https://arcticnature.github.io/),",
+    "my own cluster service manager.",
     "",
-    "It is now time to re-think it and design a new structure."
+    "I have started this because the tools available at the moment all seem",
+    "to be limited, mostly in the ability to only run docker containers.",
+    "Service integration also seems arbitrary limited.",
+    "",
+    "SnowFox aims to be a flexible service runner and manager that supports",
+    "clustering and uses components to determine its own behaviour."
   ]
 }

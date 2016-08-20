@@ -1,6 +1,7 @@
 .PHONY: build clean debug publish server upload
 .DEFAULT_GOAL := build
 
+SERVER_FLAGS ?= --buildDrafts
 
 build:
 	cd assets/ && npm install
@@ -25,7 +26,7 @@ publish: clean build upload
 
 
 server: debug
-	cd site/ && hugo server
+	cd site/ && hugo server $(SERVER_FLAGS)
 
 
 upload:
