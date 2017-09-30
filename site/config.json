@@ -5,6 +5,7 @@
 
    "canonifyurls": false,
    "relativeURLs": true,
+   "uglyurls": true,
 
    "contentdir": "content",
    "theme": "spogliani",
