@@ -1,4 +1,4 @@
-baseURL = "http://spogliani.net/"
+baseURL = "https://spogliani.net/"
 languageCode = "en-us"
 theme = "hello-friend-ng-adapted"
 title = "Stefano Pogliani"
