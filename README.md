@@ -20,3 +20,16 @@ so `source` is the main branch for this repo.
 
 The `public/` directory is a [git worktree](https://git-scm.com/docs/git-worktree)
 pointing to `master` so updates can be published more easily.
+
+```bash
+# Remove currently published version.
+rm -rf public/*
+
+# Generate the new site.
+hugo
+
+# Commit latest version to the master branch.
+cd public && git add --all && git commit -m "Publishing to GH Pages" && cd ..
+
+# Publish the new version by pushing master to GitHub"
+git push --all
