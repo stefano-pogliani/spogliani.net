@@ -1,0 +1,25 @@
+baseURL = "http://spogliani.net/"
+languageCode = "en-us"
+theme = "hello-friend-ng-adapted"
+title = "Stefano Pogliani"
+disableKinds = ["RSS"]
+
+[author]
+  name = "Stefano Pogliani"
+
+[params]
+  homeSubtitle = "Passionate about building stable, secure and scalable infrastructures and Platform as a Service solutions."
+
+  [params.resume]
+    text = "Download CV"
+    url = "/cv.pdf"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/stefano-pogliani"
+  [[params.social]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/spogliani/"
+  [[params.social]]
+    name = "email"
+    url = "mailto:stefano@spogliani.net"

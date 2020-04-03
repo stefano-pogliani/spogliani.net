@@ -1,0 +1,16 @@
+name = "hello-friend-ng-adapted"
+license = "MIT"
+licenselink = "https://github.com/stefano-pogliani/spogliani.net/blob/master/themes/personal/LICENSE.md"
+description = "A personal webside theme adaptation"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Stefano Pogliani"
+  homepage = "https://spogliani.net"
+
+[original]
+  name = "hello-friend-ng"
+  homepage = "https://atlialp.com"
+  repo = "https://github.com/rhazdon/hugo-theme-hello-friend-ng"
