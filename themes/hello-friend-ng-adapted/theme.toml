@@ -1,6 +1,6 @@
 name = "hello-friend-ng-adapted"
 license = "MIT"
-licenselink = "https://github.com/stefano-pogliani/spogliani.net/blob/master/themes/personal/LICENSE.md"
+licenselink = "https://github.com/stefano-pogliani/spogliani.net/blob/source/themes/personal/LICENSE.md"
 description = "A personal webside theme adaptation"
 tags = []
 features = []
